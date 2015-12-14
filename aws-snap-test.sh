@@ -103,11 +103,17 @@ echo " Enter AWS Access Key ID [None]:AWS Secret Access Key [None]: Default regi
 
 aws configure
 
+# Aws Describe Tags
+
+echo " Descibe Tags"
+
+aws ec2 describe-tags > describe-tags
+
 # Aws descibe volumes
 
 echo " Descibe volumes "
 
-aws ec2 describe-volumes > describe-volumes.txt
+aws ec2 describe-volumes > describe-volumes
 
 #execute python script
 
