@@ -51,7 +51,7 @@ fi
 
 pip install boto3 >/dev/null 2>&1
 
-#switch to tmp and download aws-snapshot-tool
+#change to tmp and download aws-snapshot-tool
 
 cd /tmp
 
@@ -97,13 +97,17 @@ echo " config = {
     #'proxyPort': '8080'
 } " > config.py
 
+# Aws environment configure 
+
 echo " Enter AWS Access Key ID [None]:AWS Secret Access Key [None]: Default region name [None]: press enter for default output format "
 
 aws configure
 
+# Aws descibe volumes
+
 echo " Descibe volumes "
 
-aws ec2 describe-volumes
+aws ec2 describe-volumes > describe-volumes.txt
 
 #execute python script
 
