@@ -1,6 +1,5 @@
 #/bin/sh
 
-
 set -x	
 
 # Install curl if not already installed 
@@ -13,7 +12,6 @@ if  [ $? != 0 ]; then
 
 fi
 
-
 # Install wget if not already installed 
 
 which wget >/dev/null 2>&1
@@ -24,9 +22,8 @@ if  [ $? != 0 ]; then
 
 fi
 
-#
 # Install git if not already installed 
-#
+
 which git >/dev/null 2>&1
 
 if  [ $? != 0 ]; then
@@ -37,7 +34,7 @@ fi
 
 # Install Epel-release if not already installed
 
-  yum install -y epel-release >/dev/null 2>&1
+yum install -y epel-release >/dev/null 2>&1
 
 
 # Install python-pip  if not already installed
@@ -46,25 +43,23 @@ which python-pip >/dev/null 2>&1
 
 if  [ $? != 0 ]; then
 
-  yum install -y python-pip >/dev/null 2>&1
+yum install -y python-pip >/dev/null 2>&1
 
 fi
 
 # Install boto3
 
- pip install boto3 >/dev/null 2>&1
+pip install boto3 >/dev/null 2>&1
 
 #switch to tmp and download aws-snapshot-tool
 
-  cd /tmp
+cd /tmp
 
-  git clone https://github.com/evannuil/aws-snapshot-tool.git >/dev/null 2>&1
+git clone https://github.com/evannuil/aws-snapshot-tool.git >/dev/null 2>&1
 
 # Change dir to aws-snapshot-tool
 
-  cd aws-snapshot-tool
-
-  
+cd aws-snapshot-tool
 
 # create and push the contents given below into config.py
 # Add accesskey,secretkey, region info, tagname of volume
@@ -109,7 +104,6 @@ aws configure
 echo " Descibe volumes "
 
 aws ec2 describe-volumes
-
 
 #execute python script
 
