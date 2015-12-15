@@ -73,8 +73,8 @@ echo " config = {
     'aws_secret_key': 'xxxxxxxxxxxx',
 
     # EC2 info about your server's region
-    'ec2_region_name': 'eu-west-1',
-    'ec2_region_endpoint': 'ec2.eu-west-1.amazonaws.com',
+    'ec2_region_name': 'us-east-1',
+    'ec2_region_endpoint': 'ec2.us-east-1.amazonaws.com',
 
     # Tag of the EBS volume you want to take the snapshots of
     'tag_name': 'tag:MakeSnapshot',
