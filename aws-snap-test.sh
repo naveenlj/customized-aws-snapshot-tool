@@ -77,7 +77,7 @@ echo " config = {
     'ec2_region_endpoint': 'ec2.us-east-1.amazonaws.com',
 
     # Tag of the EBS volume you want to take the snapshots of
-    'tag_name': 'tag:MakeSnapshot',
+    'tag_name': '$Tagname',
     'tag_value': 'True',
 
     # Number of snapshots to keep (the older ones are going to be deleted,
@@ -119,4 +119,4 @@ aws ec2 describe-volumes > describe-volumes
 
 chmod +x makesnapshots.py
 
-python makesnapshots.py
+python makesnapshots.py day
