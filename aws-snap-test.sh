@@ -55,6 +55,12 @@ pip install boto3 >/dev/null 2>&1
 
 cd /tmp
 
+# Python script will create a volume tag using volume ID of current instance from script executed
+
+wget https://raw.githubusercontent.com/naveenlj/customized-aws-snapshot-tool/master/create-volume-tags.py
+
+python create-volume-tags.py
+
 git clone https://github.com/evannuil/aws-snapshot-tool.git >/dev/null 2>&1
 
 # Change dir to aws-snapshot-tool
@@ -78,7 +84,7 @@ echo " config = {
 
     # Tag of the EBS volume you want to take the snapshots of
     'tag_name': '$Tagname',
-    'tag_value': 'True',
+    'tag_value': 'Name',
 
     # Number of snapshots to keep (the older ones are going to be deleted,
     # since they cost money).
