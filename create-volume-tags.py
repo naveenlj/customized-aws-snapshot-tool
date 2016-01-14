@@ -18,7 +18,7 @@ def main():
 		description =  "%s - %s" % (volume.attach_data.device, datetime.utcnow())
 		if not volume.tags.get('Name'):
 			print "Volume sem tag, adicionando..."
-			volume.add_tag('Name', instance_id)
+			volume.add_tag(instance_id,'Name')
 	
 if __name__ == '__main__':
 	main()
